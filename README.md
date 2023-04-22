@@ -18,3 +18,7 @@ RecursiveAction
 Synchronization
 
 Volatile
+
+Reference:
+
+https://www.vogella.com/tutorials/JavaConcurrency/article.html#:~:text=1.1.-,What%20is%20concurrency%3F,the%20interactivity%20of%20the%20program.
