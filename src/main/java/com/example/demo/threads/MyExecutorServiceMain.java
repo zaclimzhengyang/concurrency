@@ -26,6 +26,8 @@ public class MyExecutorServiceMain {
      * pool without having to deal with the low-level details of thread management. the `ThreadPoolExecutor`
      * provides a flexible and powerful implementation of the `Executor` interface that can be customized to
      * meet the needs of a wide range of use cases
+     *
+     * `Runnable` is used for simpel tasks that do not require a return value
      */
     private static final int numberOfThreads = 10;
 
