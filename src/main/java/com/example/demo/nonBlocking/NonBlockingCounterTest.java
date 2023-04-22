@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.*;
 
-public class nonBlockingCounterTest {
+public class NonBlockingCounterTest {
     /**
      * this test class is to test the functionality of a non-blocking counter
      *
@@ -19,7 +19,7 @@ public class nonBlockingCounterTest {
 
     public static void main(String[] args) {
         // we initialize the number of threads to 10, and then create an instance of a non-blocking counter object
-        final nonBlockingCounter counter = new nonBlockingCounter();
+        final NonBlockingCounter counter = new NonBlockingCounter();
 
         // an ArrayList is then initialized to hold a list of Futures.
         // a `Future` represents the result of an asynchronous computation. and in this case,

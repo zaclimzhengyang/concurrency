@@ -2,7 +2,7 @@ package com.example.demo.nonBlocking;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class nonBlockingCounter {
+public class NonBlockingCounter {
     private AtomicInteger value = new AtomicInteger();
 
     public int getValue() {

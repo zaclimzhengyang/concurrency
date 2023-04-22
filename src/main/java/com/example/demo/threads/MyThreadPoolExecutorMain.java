@@ -14,11 +14,11 @@ public class MyThreadPoolExecutorMain {
             Runnable worker = new MyRunnable(100000 + i);
             executor.execute(worker);
         }
+        // wait until all threads are finished
+        executor.awaitTermination(5L, TimeUnit.SECONDS);
         // this will make the executor not accept any new threads
         // and final all existing threads in the queue
         executor.shutdown();
-        // wait until all threads are finished
-        executor.awaitTermination(5L, TimeUnit.SECONDS);
         System.out.println("Finished all threads");
     }
 }

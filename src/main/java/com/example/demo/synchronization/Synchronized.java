@@ -28,6 +28,13 @@ public class Synchronized {
 
         // keep track of the visited sites and
         // keeps a list of sites which needs to be crawled
+
+        /**
+         * synchronised(this) {
+         *     crawledSitesObject.add(site);
+         * }
+         */
+
         public void add(String site) {
             synchronized (this) {
                 if (!crawledSites.contains(site)) {
