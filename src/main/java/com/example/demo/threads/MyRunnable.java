@@ -2,8 +2,10 @@ package com.example.demo.threads;
 
 public class MyRunnable implements Runnable {
     /**
-     * `Runnable` is an interface that defines the run() method
-     * this method is called by the `Thread` object and contains the work which should be done
+     * `Runnable` is an interface that defines a single method, the run() method
+     * this method is called by the `Thread` object and contains the work which can be executed
+     * asynchronously by a thread
+     *
      * therefore, the `Runnable` is the task to perform
      * the `Thread` is the worker who is doing this task
      *

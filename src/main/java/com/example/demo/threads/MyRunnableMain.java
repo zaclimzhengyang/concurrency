@@ -9,23 +9,31 @@ public class MyRunnableMain {
      *      1. create a new thread causes some performance overhead
      *      2. too many threads can lead to reduced performance, as the CPU needs to switch between these threads
      *      3. we cannot easily control the number of threads, therefore we may run into `out of memory` errors due to too many threads
-     * @param args
      */
     public static void main(String[] args) {
+        /**
+         * we will create 500 threads, set the name of each thread
+         * start the thread by calling `start()` method on `Thread worker`
+         * remember the thread for later usage, by adding to the list of thread
+         */
         ArrayList<Thread> threads = new ArrayList<Thread>();
-        // we will create 500 threads
         for (int i = 0; i < 500; i++) {
             MyRunnable task = new MyRunnable(100000 + i);
             Thread worker = new Thread(task);
-            // we can set the name of the thread
             worker.setName(String.valueOf(i));
-            // start the thread, never call method run() directly
             worker.start();
             System.out.println("Current thread running: worker.getName(): " + worker.getName());
-            // remember the thread for later usage
             threads.add(worker);
         }
         int running = 0;
+        /**
+         * we check the number of running threads to ensure that the program does not exit prematurely
+         * before all the work is done
+         * when a thread is started using the `start()` method, it does not immediately complete its
+         * task and terminate. instead, the thread is scheduled by the operating system to run
+         * concurrently with other threads. this means that even though a thread has been started,
+         * it may not have completed its task yet, and could still be running
+         */
         do {
             running = 0;
             for (Thread thread : threads) {
@@ -34,7 +42,6 @@ public class MyRunnableMain {
                     running++;
                 }
             }
-
             System.out.println("We have " + running + " running threads");
         } while (running > 0);
     }
